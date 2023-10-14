@@ -81,14 +81,20 @@ class AnthropicBedrock(SyncAPIClient):
 
         This automatically infers the `aws_region` argument from the `AWS_REGION` environment variable if it is not provided.
         """
+        if aws_secret_key is None:
+            aws_secret_key = None
         self.aws_secret_key = aws_secret_key
 
+        if aws_access_key is None:
+            aws_access_key = None
         self.aws_access_key = aws_access_key
 
         if aws_region is None:
             aws_region = os.environ.get("AWS_REGION") or "us-east-1"
         self.aws_region = aws_region
 
+        if aws_session_token is None:
+            aws_session_token = None
         self.aws_session_token = aws_session_token
 
         if base_url is None:
@@ -285,14 +291,20 @@ class AsyncAnthropicBedrock(AsyncAPIClient):
 
         This automatically infers the `aws_region` argument from the `AWS_REGION` environment variable if it is not provided.
         """
+        if aws_secret_key is None:
+            aws_secret_key = None
         self.aws_secret_key = aws_secret_key
 
+        if aws_access_key is None:
+            aws_access_key = None
         self.aws_access_key = aws_access_key
 
         if aws_region is None:
             aws_region = os.environ.get("AWS_REGION") or "us-east-1"
         self.aws_region = aws_region
 
+        if aws_session_token is None:
+            aws_session_token = None
         self.aws_session_token = aws_session_token
 
         if base_url is None:
