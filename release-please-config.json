@@ -57,6 +57,9 @@
       "hidden": true
     }
   ],
+  "reviewers": [
+    "@anthropics/sdk"
+  ],
   "release-type": "python",
   "extra-files": [
     "src/anthropic_bedrock/_version.py"
