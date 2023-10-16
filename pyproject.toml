@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "anthropic-bedrock"
-version = "0.1.0"
+version = "0.1.1"
 description = "Client library for the anthropic-bedrock API"
 readme = "README.md"
 authors = ["Anthropic Bedrock <dev-feedback@anthropic.com>"]
