@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import os
 import asyncio
-from typing import Union, Mapping, Optional
+from typing import Union, Mapping
 
 import httpx
 from tokenizers import Tokenizer  # type: ignore[import]
@@ -60,7 +60,7 @@ class AnthropicBedrock(SyncAPIClient):
         aws_access_key: str | None = None,
         aws_region: str | None = None,
         aws_session_token: str | None = None,
-        base_url: Optional[str] = None,
+        base_url: str | httpx.URL | None = None,
         timeout: Union[float, Timeout, None, NotGiven] = NOT_GIVEN,
         max_retries: int = DEFAULT_MAX_RETRIES,
         default_headers: Mapping[str, str] | None = None,
@@ -137,7 +137,7 @@ class AnthropicBedrock(SyncAPIClient):
         aws_access_key: str | None = None,
         aws_region: str | None = None,
         aws_session_token: str | None = None,
-        base_url: str | None = None,
+        base_url: str | httpx.URL | None = None,
         timeout: float | Timeout | None | NotGiven = NOT_GIVEN,
         http_client: httpx.Client | None = None,
         max_retries: int | NotGiven = NOT_GIVEN,
@@ -264,7 +264,7 @@ class AsyncAnthropicBedrock(AsyncAPIClient):
         aws_access_key: str | None = None,
         aws_region: str | None = None,
         aws_session_token: str | None = None,
-        base_url: Optional[str] = None,
+        base_url: str | httpx.URL | None = None,
         timeout: Union[float, Timeout, None, NotGiven] = NOT_GIVEN,
         max_retries: int = DEFAULT_MAX_RETRIES,
         default_headers: Mapping[str, str] | None = None,
@@ -341,7 +341,7 @@ class AsyncAnthropicBedrock(AsyncAPIClient):
         aws_access_key: str | None = None,
         aws_region: str | None = None,
         aws_session_token: str | None = None,
-        base_url: str | None = None,
+        base_url: str | httpx.URL | None = None,
         timeout: float | Timeout | None | NotGiven = NOT_GIVEN,
         http_client: httpx.AsyncClient | None = None,
         max_retries: int | NotGiven = NOT_GIVEN,
