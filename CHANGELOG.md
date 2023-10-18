@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.2.0 (2023-10-18)
+
+Full Changelog: [v0.1.1...v0.2.0](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.1.1...v0.2.0)
+
+### Features
+
+* **client:** support passing httpx.URL instances to base_url ([#17](https://github.com/anthropics/anthropic-bedrock-python/issues/17)) ([ab60451](https://github.com/anthropics/anthropic-bedrock-python/commit/ab60451e4f104e7739ce5e483ebfe40da9ea0d3e))
+
+
+### Chores
+
+* **internal:** improve publish script ([#16](https://github.com/anthropics/anthropic-bedrock-python/issues/16)) ([db74296](https://github.com/anthropics/anthropic-bedrock-python/commit/db74296def9f9f9e8c13ef4c12bf0d8e3715c209))
+* **internal:** migrate from Poetry to Rye ([#14](https://github.com/anthropics/anthropic-bedrock-python/issues/14)) ([0d687d5](https://github.com/anthropics/anthropic-bedrock-python/commit/0d687d53670e3ebfc1f87f6160d46777ab249475))
+* **internal:** update gitignore ([#19](https://github.com/anthropics/anthropic-bedrock-python/issues/19)) ([a952733](https://github.com/anthropics/anthropic-bedrock-python/commit/a952733553b70bdbabc0f6a09b5d5a5578ac50ca))
+
 ## 0.1.1 (2023-10-16)
 
 Full Changelog: [v0.1.0...v0.1.1](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.1.0...v0.1.1)
