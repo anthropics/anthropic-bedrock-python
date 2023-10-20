@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.1 (2023-10-20)
+
+Full Changelog: [v0.2.0...v0.2.1](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.2.0...v0.2.1)
+
+### Chores
+
+* **internal:** bump mypy ([#24](https://github.com/anthropics/anthropic-bedrock-python/issues/24)) ([87e57df](https://github.com/anthropics/anthropic-bedrock-python/commit/87e57df17f9811118d85c1ff6dd963a1aed08262))
+* **internal:** bump pyright ([#23](https://github.com/anthropics/anthropic-bedrock-python/issues/23)) ([325a219](https://github.com/anthropics/anthropic-bedrock-python/commit/325a2192c8f70ec7dc56390df7e743b7dbd3bfcd))
+* **internal:** update gitignore ([#20](https://github.com/anthropics/anthropic-bedrock-python/issues/20)) ([17fb6c1](https://github.com/anthropics/anthropic-bedrock-python/commit/17fb6c121eaf144b3ee448eea78bd55cbd3c1253))
+
 ## 0.2.0 (2023-10-18)
 
 Full Changelog: [v0.1.1...v0.2.0](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.1.1...v0.2.0)
