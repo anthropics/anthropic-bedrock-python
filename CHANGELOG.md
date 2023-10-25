@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.3.0 (2023-10-25)
+
+Full Changelog: [v0.2.1...v0.3.0](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.2.1...v0.3.0)
+
+### Features
+
+* **client:** adjust retry behavior to be exponential backoff ([#26](https://github.com/anthropics/anthropic-bedrock-python/issues/26)) ([c231377](https://github.com/anthropics/anthropic-bedrock-python/commit/c231377ea175f6dba3376d8dfb2e236ac51d1547))
+* **client:** improve file upload types ([#25](https://github.com/anthropics/anthropic-bedrock-python/issues/25)) ([eb651e3](https://github.com/anthropics/anthropic-bedrock-python/commit/eb651e349b956f19f328421a3b55b10860ab53d3))
+
+
+### Documentation
+
+* improve to dictionary example ([#28](https://github.com/anthropics/anthropic-bedrock-python/issues/28)) ([8c226c0](https://github.com/anthropics/anthropic-bedrock-python/commit/8c226c01eb808e95a2e562858690b140b22ad893))
+
 ## 0.2.1 (2023-10-20)
 
 Full Changelog: [v0.2.0...v0.2.1](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.2.0...v0.2.1)
