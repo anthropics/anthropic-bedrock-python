@@ -5,6 +5,7 @@ from __future__ import annotations
 import os
 import asyncio
 from typing import Union, Mapping
+from typing_extensions import override
 
 import httpx
 from tokenizers import Tokenizer  # type: ignore[import]
@@ -110,9 +111,11 @@ class AnthropicBedrock(SyncAPIClient):
         self.completions = resources.Completions(self)
 
     @property
+    @override
     def qs(self) -> Querystring:
         return Querystring(array_format="comma")
 
+    @override
     def _prepare_request(self, request: httpx.Request) -> None:
         from ._auth import get_auth_headers
 
@@ -211,6 +214,7 @@ class AnthropicBedrock(SyncAPIClient):
     def get_tokenizer(self) -> Tokenizer:
         return sync_get_tokenizer()
 
+    @override
     def _make_status_error(
         self,
         err_msg: str,
@@ -314,9 +318,11 @@ class AsyncAnthropicBedrock(AsyncAPIClient):
         self.completions = resources.AsyncCompletions(self)
 
     @property
+    @override
     def qs(self) -> Querystring:
         return Querystring(array_format="comma")
 
+    @override
     def _prepare_request(self, request: httpx.Request) -> None:
         from ._auth import get_auth_headers
 
@@ -418,6 +424,7 @@ class AsyncAnthropicBedrock(AsyncAPIClient):
     async def get_tokenizer(self) -> Tokenizer:
         return await async_get_tokenizer()
 
+    @override
     def _make_status_error(
         self,
         err_msg: str,
