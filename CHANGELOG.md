@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.1 (2023-10-26)
+
+Full Changelog: [v0.3.0...v0.3.1](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.3.0...v0.3.1)
+
+### Chores
+
+* **internal:** require explicit overrides ([#32](https://github.com/anthropics/anthropic-bedrock-python/issues/32)) ([115d525](https://github.com/anthropics/anthropic-bedrock-python/commit/115d525202d0e3c04b604c597b496da7013149ea))
+
 ## 0.3.0 (2023-10-25)
 
 Full Changelog: [v0.2.1...v0.3.0](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.2.1...v0.3.0)
