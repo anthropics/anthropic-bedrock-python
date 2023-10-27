@@ -13,7 +13,9 @@ dependencies = [
     "typing-extensions>=4.5, <5",
     "anyio>=3.5.0, <4",
     "distro>=1.7.0, <2",
-    "tokenizers >= 0.13.0", "boto3 >= 1.28.57", "botocore >= 1.31.57"
+    "tokenizers >= 0.13.0",
+    "boto3 >= 1.28.57",
+    "botocore >= 1.31.57"
 ]
 requires-python = ">= 3.7"
 
