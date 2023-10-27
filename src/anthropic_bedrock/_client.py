@@ -327,7 +327,7 @@ class AsyncAnthropicBedrock(AsyncAPIClient):
         return Querystring(array_format="comma")
 
     @override
-    def _prepare_request(self, request: httpx.Request) -> None:
+    async def _prepare_request(self, request: httpx.Request) -> None:
         from ._auth import get_auth_headers
 
         data = request.read().decode()
