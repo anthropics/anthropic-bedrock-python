@@ -19,6 +19,7 @@ from anthropic_bedrock import (
     AsyncAnthropicBedrock,
     APIResponseValidationError,
 )
+from anthropic_bedrock._client import AnthropicBedrock, AsyncAnthropicBedrock
 from anthropic_bedrock._models import BaseModel, FinalRequestOptions
 from anthropic_bedrock._streaming import Stream, AsyncStream
 from anthropic_bedrock._exceptions import APIResponseValidationError
@@ -35,7 +36,7 @@ aws_access_key = "<access key>"
 aws_region = "us-east-2"
 
 
-def _get_params(client: BaseClient[Any]) -> dict[str, str]:
+def _get_params(client: BaseClient[Any, Any]) -> dict[str, str]:
     request = client._build_request(FinalRequestOptions(method="get", url="/foo"))
     url = httpx.URL(request.url)
     return dict(url.params)

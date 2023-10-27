@@ -7,6 +7,7 @@ import os
 import pytest
 
 from anthropic_bedrock import AnthropicBedrock, AsyncAnthropicBedrock
+from anthropic_bedrock._client import AnthropicBedrock, AsyncAnthropicBedrock
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 aws_secret_key = "<secret key>"
