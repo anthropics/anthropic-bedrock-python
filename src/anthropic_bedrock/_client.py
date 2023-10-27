@@ -43,6 +43,7 @@ __all__ = [
 
 class AnthropicBedrock(SyncAPIClient):
     completions: resources.Completions
+    with_raw_response: AnthropicBedrockWithRawResponse
 
     # client options
     aws_secret_key: str | None
@@ -109,6 +110,7 @@ class AnthropicBedrock(SyncAPIClient):
         self._default_stream_cls = Stream
 
         self.completions = resources.Completions(self)
+        self.with_raw_response = AnthropicBedrockWithRawResponse(self)
 
     @property
     @override
@@ -250,6 +252,7 @@ class AnthropicBedrock(SyncAPIClient):
 
 class AsyncAnthropicBedrock(AsyncAPIClient):
     completions: resources.AsyncCompletions
+    with_raw_response: AsyncAnthropicBedrockWithRawResponse
 
     # client options
     aws_secret_key: str | None
@@ -316,6 +319,7 @@ class AsyncAnthropicBedrock(AsyncAPIClient):
         self._default_stream_cls = AsyncStream
 
         self.completions = resources.AsyncCompletions(self)
+        self.with_raw_response = AsyncAnthropicBedrockWithRawResponse(self)
 
     @property
     @override
@@ -456,6 +460,16 @@ class AsyncAnthropicBedrock(AsyncAPIClient):
         if response.status_code >= 500:
             return _exceptions.InternalServerError(err_msg, response=response, body=body)
         return APIStatusError(err_msg, response=response, body=body)
+
+
+class AnthropicBedrockWithRawResponse:
+    def __init__(self, client: AnthropicBedrock) -> None:
+        self.completions = resources.CompletionsWithRawResponse(client.completions)
+
+
+class AsyncAnthropicBedrockWithRawResponse:
+    def __init__(self, client: AsyncAnthropicBedrock) -> None:
+        self.completions = resources.AsyncCompletionsWithRawResponse(client.completions)
 
 
 Client = AnthropicBedrock
