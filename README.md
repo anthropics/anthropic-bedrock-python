@@ -6,7 +6,7 @@ The Anthropic Bedrock Python library provides convenient access to the [Anthropi
 application. It includes type definitions for all request params and response fields,
 and offers both synchronous and asynchronous clients powered by [httpx](https://github.com/encode/httpx).
 
-For the non-Bedrock Anthropic API at api.anthropic.com, see [`anthropic-python`](github.com/anthropics/anthropic-sdk-python).
+For the non-Bedrock Anthropic API at api.anthropic.com, see [`anthropic-python`](https://github.com/anthropics/anthropic-sdk-python).
 
 ## Documentation
 
