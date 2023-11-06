@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.4.0 (2023-11-06)
+
+Full Changelog: [v0.3.1...v0.4.0](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.3.1...v0.4.0)
+
+### Features
+
+* **client:** allow binary returns ([#41](https://github.com/anthropics/anthropic-bedrock-python/issues/41)) ([bdc3240](https://github.com/anthropics/anthropic-bedrock-python/commit/bdc3240984f4826fd5a50ce9b7857b65e398ef04))
+* **client:** support accessing raw response objects ([#34](https://github.com/anthropics/anthropic-bedrock-python/issues/34)) ([1833b84](https://github.com/anthropics/anthropic-bedrock-python/commit/1833b8487950a2628b87cac62813b3feadad7261))
+* **client:** support passing BaseModels to request params at runtime ([#42](https://github.com/anthropics/anthropic-bedrock-python/issues/42)) ([b2f3ac5](https://github.com/anthropics/anthropic-bedrock-python/commit/b2f3ac5af7dd87d24cdb291c25f2cdfcbf916e59))
+* **github:** include a devcontainer setup ([#40](https://github.com/anthropics/anthropic-bedrock-python/issues/40)) ([8a74a91](https://github.com/anthropics/anthropic-bedrock-python/commit/8a74a9189761979b93ba9bcfb1ac4a36b1f858ba))
+* **package:** add classifiers ([#38](https://github.com/anthropics/anthropic-bedrock-python/issues/38)) ([6670b3d](https://github.com/anthropics/anthropic-bedrock-python/commit/6670b3daf849498a5937d74ca4a894d54767e28d))
+
+
+### Bug Fixes
+
+* **binaries:** don't synchronously block in astream_to_file ([#43](https://github.com/anthropics/anthropic-bedrock-python/issues/43)) ([0ec53cd](https://github.com/anthropics/anthropic-bedrock-python/commit/0ec53cdfcdfd0ba63725233a4dfe88608eaaa22e))
+* prevent TypeError in Python 3.8 (ABC is not subscriptable) ([#46](https://github.com/anthropics/anthropic-bedrock-python/issues/46)) ([a459837](https://github.com/anthropics/anthropic-bedrock-python/commit/a4598370b3949b10099377555c3cbb14ca222e75))
+
+
+### Chores
+
+* **internal:** minor restructuring of base client ([#37](https://github.com/anthropics/anthropic-bedrock-python/issues/37)) ([e3550c9](https://github.com/anthropics/anthropic-bedrock-python/commit/e3550c97d898c2049ffe067fbfa4ff6025e1d03d))
+* **internal:** remove unused int/float conversion ([#45](https://github.com/anthropics/anthropic-bedrock-python/issues/45)) ([7021d09](https://github.com/anthropics/anthropic-bedrock-python/commit/7021d098706d88a7a62b80f6ca9a0d66219e757f))
+
+
+### Documentation
+
+* **api:** improve method signatures for named path params ([#44](https://github.com/anthropics/anthropic-bedrock-python/issues/44)) ([a9d8bd3](https://github.com/anthropics/anthropic-bedrock-python/commit/a9d8bd392bb5f465dfd760a58f6fd8e3ab6e07cb))
+* fix github links ([#39](https://github.com/anthropics/anthropic-bedrock-python/issues/39)) ([c1ad694](https://github.com/anthropics/anthropic-bedrock-python/commit/c1ad69475e65788cf5524a4a2b3df6a858176f95))
+
 ## 0.3.1 (2023-10-26)
 
 Full Changelog: [v0.3.0...v0.3.1](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.3.0...v0.3.1)
