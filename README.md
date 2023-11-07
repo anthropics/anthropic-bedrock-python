@@ -270,7 +270,7 @@ completion = response.parse()  # get the object that `completions.create()` woul
 print(completion.completion)
 ```
 
-These methods return an [`APIResponse`](https://github.com/anthropics/anthropic-bedrock-python/src/anthropic_bedrock/_response.py) object.
+These methods return an [`APIResponse`](https://github.com/anthropics/anthropic-bedrock-python/tree/main/src/anthropic_bedrock/_response.py) object.
 
 ### Configuring the HTTP client
 
