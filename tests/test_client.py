@@ -53,12 +53,12 @@ class TestAnthropicBedrock:
 
     @pytest.mark.respx(base_url=base_url)
     def test_raw_response(self, respx_mock: MockRouter) -> None:
-        respx_mock.post("/foo").mock(return_value=httpx.Response(200, json='{"foo": "bar"}'))
+        respx_mock.post("/foo").mock(return_value=httpx.Response(200, json={"foo": "bar"}))
 
         response = self.client.post("/foo", cast_to=httpx.Response)
         assert response.status_code == 200
         assert isinstance(response, httpx.Response)
-        assert response.json() == '{"foo": "bar"}'
+        assert response.json() == {"foo": "bar"}
 
     @pytest.mark.respx(base_url=base_url)
     def test_raw_response_for_binary(self, respx_mock: MockRouter) -> None:
@@ -69,7 +69,7 @@ class TestAnthropicBedrock:
         response = self.client.post("/foo", cast_to=httpx.Response)
         assert response.status_code == 200
         assert isinstance(response, httpx.Response)
-        assert response.json() == '{"foo": "bar"}'
+        assert response.json() == {"foo": "bar"}
 
     def test_copy(self) -> None:
         copied = self.client.copy()
@@ -692,12 +692,12 @@ class TestAsyncAnthropicBedrock:
     @pytest.mark.respx(base_url=base_url)
     @pytest.mark.asyncio
     async def test_raw_response(self, respx_mock: MockRouter) -> None:
-        respx_mock.post("/foo").mock(return_value=httpx.Response(200, json='{"foo": "bar"}'))
+        respx_mock.post("/foo").mock(return_value=httpx.Response(200, json={"foo": "bar"}))
 
         response = await self.client.post("/foo", cast_to=httpx.Response)
         assert response.status_code == 200
         assert isinstance(response, httpx.Response)
-        assert response.json() == '{"foo": "bar"}'
+        assert response.json() == {"foo": "bar"}
 
     @pytest.mark.respx(base_url=base_url)
     @pytest.mark.asyncio
@@ -709,7 +709,7 @@ class TestAsyncAnthropicBedrock:
         response = await self.client.post("/foo", cast_to=httpx.Response)
         assert response.status_code == 200
         assert isinstance(response, httpx.Response)
-        assert response.json() == '{"foo": "bar"}'
+        assert response.json() == {"foo": "bar"}
 
     def test_copy(self) -> None:
         copied = self.client.copy()
