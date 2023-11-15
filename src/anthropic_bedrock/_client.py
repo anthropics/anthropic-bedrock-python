@@ -94,6 +94,8 @@ class AnthropicBedrock(SyncAPIClient):
         self.aws_session_token = aws_session_token
 
         if base_url is None:
+            base_url = os.environ.get("ANTHROPIC_BEDROCK_BASE_URL")
+        if base_url is None:
             base_url = f"https://bedrock-runtime.{self.aws_region}.amazonaws.com"
 
         super().__init__(
@@ -302,6 +304,8 @@ class AsyncAnthropicBedrock(AsyncAPIClient):
 
         self.aws_session_token = aws_session_token
 
+        if base_url is None:
+            base_url = os.environ.get("ANTHROPIC_BEDROCK_BASE_URL")
         if base_url is None:
             base_url = f"https://bedrock-runtime.{self.aws_region}.amazonaws.com"
 
