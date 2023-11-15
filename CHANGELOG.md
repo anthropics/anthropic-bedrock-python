@@ -1,5 +1,38 @@
 # Changelog
 
+## 0.5.0 (2023-11-15)
+
+Full Changelog: [v0.4.0...v0.5.0](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.4.0...v0.5.0)
+
+### Features
+
+* **client:** support passing chunk size for binary responses ([#52](https://github.com/anthropics/anthropic-bedrock-python/issues/52)) ([e4082c9](https://github.com/anthropics/anthropic-bedrock-python/commit/e4082c9a2f7b7f48153623a36ff013d23e977b4c))
+* **client:** support passing httpx.Timeout to method timeout argument ([#47](https://github.com/anthropics/anthropic-bedrock-python/issues/47)) ([e01b122](https://github.com/anthropics/anthropic-bedrock-python/commit/e01b122d2abac7005439ad258e69636f2e1b5082))
+* **client:** support reading the base url from an env variable ([#62](https://github.com/anthropics/anthropic-bedrock-python/issues/62)) ([75ad959](https://github.com/anthropics/anthropic-bedrock-python/commit/75ad959130819ebe65d53755870198c755bd1a53))
+
+
+### Bug Fixes
+
+* **client:** retry if SSLWantReadError occurs in the async client ([#57](https://github.com/anthropics/anthropic-bedrock-python/issues/57)) ([f00c6db](https://github.com/anthropics/anthropic-bedrock-python/commit/f00c6dbc25da426d05adf2013843b7911bc9df49))
+* **client:** serialise pydantic v1 default fields correctly in params ([#56](https://github.com/anthropics/anthropic-bedrock-python/issues/56)) ([5bf701b](https://github.com/anthropics/anthropic-bedrock-python/commit/5bf701bbdde40bd50a3756093e45da6fedd21ada))
+* **models:** mark unknown fields as set in pydantic v1 ([#55](https://github.com/anthropics/anthropic-bedrock-python/issues/55)) ([2c1b0b1](https://github.com/anthropics/anthropic-bedrock-python/commit/2c1b0b12b6e5c41324f8a68f4698c3012861315c))
+
+
+### Chores
+
+* **docs:** fix github links ([#50](https://github.com/anthropics/anthropic-bedrock-python/issues/50)) ([08b0b96](https://github.com/anthropics/anthropic-bedrock-python/commit/08b0b96adb225b2affd53930aedfc575f9b613fc))
+* **internal:** base client updates ([#54](https://github.com/anthropics/anthropic-bedrock-python/issues/54)) ([9cf0e41](https://github.com/anthropics/anthropic-bedrock-python/commit/9cf0e4186cf7499709060f8a543bb458a8b547d2))
+* **internal:** fix devcontainer interpeter path ([#59](https://github.com/anthropics/anthropic-bedrock-python/issues/59)) ([2a5d3f0](https://github.com/anthropics/anthropic-bedrock-python/commit/2a5d3f0ee7997a9a16a99f1b3fe08bc298c6a404))
+* **internal:** fix some typos ([#49](https://github.com/anthropics/anthropic-bedrock-python/issues/49)) ([e1e9ce9](https://github.com/anthropics/anthropic-bedrock-python/commit/e1e9ce96be9f6c7848bc0087a5f48f8851516ed3))
+* **internal:** fix typo in NotGiven docstring ([#58](https://github.com/anthropics/anthropic-bedrock-python/issues/58)) ([3956ed9](https://github.com/anthropics/anthropic-bedrock-python/commit/3956ed9744c8b9b58f6252f81c09a87f87e332ff))
+* **internal:** improve github devcontainer setup ([#51](https://github.com/anthropics/anthropic-bedrock-python/issues/51)) ([8afa9d8](https://github.com/anthropics/anthropic-bedrock-python/commit/8afa9d82390922d015df7ae31350e3593913e4d2))
+
+
+### Documentation
+
+* fix code comment typo ([#60](https://github.com/anthropics/anthropic-bedrock-python/issues/60)) ([6d7636a](https://github.com/anthropics/anthropic-bedrock-python/commit/6d7636a6b982f67814548ad0f0af90767d427a30))
+* reword package description ([#53](https://github.com/anthropics/anthropic-bedrock-python/issues/53)) ([e6d3666](https://github.com/anthropics/anthropic-bedrock-python/commit/e6d3666e26f16ffd3cb1d45bd8caf7476bd38b36))
+
 ## 0.4.0 (2023-11-06)
 
 Full Changelog: [v0.3.1...v0.4.0](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.3.1...v0.4.0)
