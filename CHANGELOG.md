@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.1 (2023-11-16)
+
+Full Changelog: [v0.5.0...v0.5.1](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.0...v0.5.1)
+
+### Documentation
+
+* **readme:** minor updates ([#63](https://github.com/anthropics/anthropic-bedrock-python/issues/63)) ([cb88f20](https://github.com/anthropics/anthropic-bedrock-python/commit/cb88f20313433ba7a6f68fc81c1e81f5670ed6e7))
+
 ## 0.5.0 (2023-11-15)
 
 Full Changelog: [v0.4.0...v0.5.0](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.4.0...v0.5.0)
