@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.5.3 (2023-11-21)
+
+Full Changelog: [v0.5.2...v0.5.3](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.2...v0.5.3)
+
+### Bug Fixes
+
+* **client:** attempt to parse unknown json content types ([#67](https://github.com/anthropics/anthropic-bedrock-python/issues/67)) ([b9a9ef4](https://github.com/anthropics/anthropic-bedrock-python/commit/b9a9ef45c2212f8f33378cfd52f2dca8c50c5547))
+
+
+### Chores
+
+* **client:** improve copy method ([#69](https://github.com/anthropics/anthropic-bedrock-python/issues/69)) ([f5294f2](https://github.com/anthropics/anthropic-bedrock-python/commit/f5294f21be89771e5ee0b6c4713052e50143fffa))
+* **package:** add license classifier metadata ([#70](https://github.com/anthropics/anthropic-bedrock-python/issues/70)) ([c34cb2a](https://github.com/anthropics/anthropic-bedrock-python/commit/c34cb2ab8356abca2bb0b2ad4e83fa89900d3546))
+
 ## 0.5.2 (2023-11-17)
 
 Full Changelog: [v0.5.1...v0.5.2](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.1...v0.5.2)
