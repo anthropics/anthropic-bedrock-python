@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.4 (2023-11-23)
+
+Full Changelog: [v0.5.3...v0.5.4](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.3...v0.5.4)
+
+### Chores
+
+* **internal:** options updates ([#71](https://github.com/anthropics/anthropic-bedrock-python/issues/71)) ([6db76e8](https://github.com/anthropics/anthropic-bedrock-python/commit/6db76e8a08aec42e5236320e5c9063f4b393289a))
+
 ## 0.5.3 (2023-11-21)
 
 Full Changelog: [v0.5.2...v0.5.3](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.2...v0.5.3)
