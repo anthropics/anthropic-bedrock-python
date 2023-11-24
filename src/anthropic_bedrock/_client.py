@@ -14,13 +14,14 @@ from . import resources, _constants, _exceptions
 from ._qs import Querystring
 from ._types import (
     NOT_GIVEN,
+    Omit,
     Timeout,
     NotGiven,
     Transport,
     ProxiesTypes,
     RequestOptions,
 )
-from ._utils import is_given
+from ._utils import is_given, get_async_library
 from ._version import __version__
 from ._streaming import Stream as Stream
 from ._streaming import AsyncStream as AsyncStream
@@ -136,6 +137,15 @@ class AnthropicBedrock(SyncAPIClient):
             data=data,
         )
         request.headers.update(headers)
+
+    @property
+    @override
+    def default_headers(self) -> dict[str, str | Omit]:
+        return {
+            **super().default_headers,
+            "X-Stainless-Async": "false",
+            **self._custom_headers,
+        }
 
     def copy(
         self,
@@ -346,6 +356,15 @@ class AsyncAnthropicBedrock(AsyncAPIClient):
             data=data,
         )
         request.headers.update(headers)
+
+    @property
+    @override
+    def default_headers(self) -> dict[str, str | Omit]:
+        return {
+            **super().default_headers,
+            "X-Stainless-Async": f"async:{get_async_library()}",
+            **self._custom_headers,
+        }
 
     def copy(
         self,
