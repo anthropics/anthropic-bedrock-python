@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.5.5 (2023-11-24)
+
+Full Changelog: [v0.5.4...v0.5.5](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.4...v0.5.5)
+
+### Chores
+
+* **internal:** revert recent options change ([#73](https://github.com/anthropics/anthropic-bedrock-python/issues/73)) ([ddff306](https://github.com/anthropics/anthropic-bedrock-python/commit/ddff3062dde2e0a40856a7fb3d892a41ac19c09e))
+* **internal:** send more detailed x-stainless headers ([#75](https://github.com/anthropics/anthropic-bedrock-python/issues/75)) ([654604e](https://github.com/anthropics/anthropic-bedrock-python/commit/654604eb04a6e85b402c4c3712a26fa738582ff6))
+
 ## 0.5.4 (2023-11-23)
 
 Full Changelog: [v0.5.3...v0.5.4](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.3...v0.5.4)
