@@ -15,9 +15,9 @@ black==23.3.0
 boto3==1.28.58
 boto3-stubs==1.28.41
 botocore==1.31.58
-botocore-stubs==1.31.69
+botocore-stubs==1.33.1
 certifi==2023.7.22
-charset-normalizer==3.3.1
+charset-normalizer==3.3.2
 click==8.1.7
 colorlog==6.7.0
 dirty-equals==0.6.0
@@ -34,7 +34,7 @@ idna==3.4
 iniconfig==2.0.0
 isort==5.10.1
 jmespath==1.0.1
-mypy==1.6.1
+mypy==1.7.1
 mypy-extensions==1.0.0
 nodeenv==1.8.0
 nox==2023.4.22
@@ -62,7 +62,7 @@ time-machine==2.9.0
 tokenizers==0.14.0
 tomli==2.0.1
 tqdm==4.66.1
-types-awscrt==0.19.3
+types-awscrt==0.19.17
 types-s3transfer==0.7.0
 typing-extensions==4.8.0
 urllib3==1.26.18
