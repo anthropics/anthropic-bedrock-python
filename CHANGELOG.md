@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.5.6 (2023-11-29)
+
+Full Changelog: [v0.5.5...v0.5.6](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.5...v0.5.6)
+
+### Chores
+
+* **deps:** bump mypy to v1.7.1 ([#76](https://github.com/anthropics/anthropic-bedrock-python/issues/76)) ([3fdd760](https://github.com/anthropics/anthropic-bedrock-python/commit/3fdd7607c7ab1e3a8b9172b4a8cac7963f35e6b5))
+* **internal:** add tests for proxy change ([#79](https://github.com/anthropics/anthropic-bedrock-python/issues/79)) ([7fec890](https://github.com/anthropics/anthropic-bedrock-python/commit/7fec89000cb5d779ebe973be7ad13e511dddb00e))
+* **internal:** updates to proxy helper ([#78](https://github.com/anthropics/anthropic-bedrock-python/issues/78)) ([ff727ff](https://github.com/anthropics/anthropic-bedrock-python/commit/ff727ff8eee83a102e6fdd601a911f98f4818244))
+
 ## 0.5.5 (2023-11-24)
 
 Full Changelog: [v0.5.4...v0.5.5](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.4...v0.5.5)
