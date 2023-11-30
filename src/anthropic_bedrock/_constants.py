@@ -3,6 +3,7 @@
 import httpx
 
 RAW_RESPONSE_HEADER = "X-Stainless-Raw-Response"
+STREAMED_RAW_RESPONSE_HEADER = "X-Stainless-Streamed-Raw-Response"
 
 # default timeout is 1 minute
 DEFAULT_TIMEOUT = httpx.Timeout(timeout=60.0, connect=5.0)
