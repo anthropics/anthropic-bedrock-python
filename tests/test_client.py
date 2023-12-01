@@ -500,6 +500,20 @@ class TestAnthropicBedrock:
         assert isinstance(response, Model)
         assert response.foo == 2
 
+    def test_base_url_setter(self) -> None:
+        client = AnthropicBedrock(
+            base_url="https://example.com/from_init",
+            aws_secret_key=aws_secret_key,
+            aws_access_key=aws_access_key,
+            aws_region=aws_region,
+            _strict_response_validation=True,
+        )
+        assert client.base_url == "https://example.com/from_init/"
+
+        client.base_url = "https://example.com/from_setter"  # type: ignore[assignment]
+
+        assert client.base_url == "https://example.com/from_setter/"
+
     def test_base_url_env(self) -> None:
         with update_env(ANTHROPIC_BEDROCK_BASE_URL="http://localhost:5000/from/env"):
             client = AnthropicBedrock(
@@ -1258,6 +1272,20 @@ class TestAsyncAnthropicBedrock:
         response = await self.client.get("/foo", cast_to=Model)
         assert isinstance(response, Model)
         assert response.foo == 2
+
+    def test_base_url_setter(self) -> None:
+        client = AsyncAnthropicBedrock(
+            base_url="https://example.com/from_init",
+            aws_secret_key=aws_secret_key,
+            aws_access_key=aws_access_key,
+            aws_region=aws_region,
+            _strict_response_validation=True,
+        )
+        assert client.base_url == "https://example.com/from_init/"
+
+        client.base_url = "https://example.com/from_setter"  # type: ignore[assignment]
+
+        assert client.base_url == "https://example.com/from_setter/"
 
     def test_base_url_env(self) -> None:
         with update_env(ANTHROPIC_BEDROCK_BASE_URL="http://localhost:5000/from/env"):
