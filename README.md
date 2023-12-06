@@ -200,7 +200,7 @@ client.with_options(max_retries=5).completions.create(
 
 ### Timeouts
 
-By default requests time out after 1 minute. You can configure this with a `timeout` option,
+By default requests time out after 10 minutes. You can configure this with a `timeout` option,
 which accepts a float or an [`httpx.Timeout`](https://www.python-httpx.org/advanced/#fine-tuning-the-configuration) object:
 
 ```python
