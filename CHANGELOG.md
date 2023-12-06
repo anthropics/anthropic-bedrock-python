@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.5.7 (2023-12-06)
+
+Full Changelog: [v0.5.6...v0.5.7](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.6...v0.5.7)
+
+### Bug Fixes
+
+* bump default request timeout to 10min to match documentation ([#88](https://github.com/anthropics/anthropic-bedrock-python/issues/88)) ([fc85322](https://github.com/anthropics/anthropic-bedrock-python/commit/fc8532218cf327b689718e96e30dc6de201c3eb2))
+* **client:** correct base_url setter implementation ([#84](https://github.com/anthropics/anthropic-bedrock-python/issues/84)) ([6983847](https://github.com/anthropics/anthropic-bedrock-python/commit/698384793dad3d202a04498c67df5672037a5ada))
+* **client:** ensure retried requests are closed ([#80](https://github.com/anthropics/anthropic-bedrock-python/issues/80)) ([3f28ec8](https://github.com/anthropics/anthropic-bedrock-python/commit/3f28ec864b48f694976f4cc69ee693c7d7082abf))
+
+
+### Chores
+
+* **internal:** remove unused file ([#83](https://github.com/anthropics/anthropic-bedrock-python/issues/83)) ([aa0ed40](https://github.com/anthropics/anthropic-bedrock-python/commit/aa0ed406abfad95df6d51e050402f8448dbdbdaa))
+* **internal:** replace string concatenation with f-strings ([#82](https://github.com/anthropics/anthropic-bedrock-python/issues/82)) ([e3545db](https://github.com/anthropics/anthropic-bedrock-python/commit/e3545db53fa8dbeb8b302c3072e13c6a1f020533))
+* **package:** lift anyio v4 restriction ([#85](https://github.com/anthropics/anthropic-bedrock-python/issues/85)) ([8879c77](https://github.com/anthropics/anthropic-bedrock-python/commit/8879c777da8d4d1cc5de7e5d7ffcabd442e61591))
+
 ## 0.5.6 (2023-11-29)
 
 Full Changelog: [v0.5.5...v0.5.6](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.5...v0.5.6)
