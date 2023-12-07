@@ -8,12 +8,7 @@ from datetime import date, datetime
 from typing_extensions import Literal, get_args, get_origin, assert_type
 
 from anthropic_bedrock._types import NoneType
-from anthropic_bedrock._utils import (
-    is_dict,
-    is_list,
-    is_list_type,
-    is_union_type,
-)
+from anthropic_bedrock._utils import is_dict, is_list, is_list_type, is_union_type
 from anthropic_bedrock._compat import PYDANTIC_V2, field_outer_type, get_model_fields
 from anthropic_bedrock._models import BaseModel
 
