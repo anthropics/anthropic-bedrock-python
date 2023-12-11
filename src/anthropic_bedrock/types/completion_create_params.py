@@ -9,7 +9,14 @@ __all__ = ["CompletionCreateParamsBase", "CompletionCreateParamsNonStreaming", "
 
 
 class CompletionCreateParamsBase(TypedDict, total=False):
-    model: Required[Union[str, Literal["anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"]]]
+    model: Required[
+        Union[
+            str,
+            Literal[
+                "anthropic.claude-v2:1", "anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"
+            ],
+        ]
+    ]
 
     max_tokens_to_sample: Required[int]
     """The maximum number of tokens to generate before stopping.

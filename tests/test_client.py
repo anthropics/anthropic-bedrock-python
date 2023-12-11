@@ -820,9 +820,9 @@ class TestAnthropicBedrock:
         with mock.patch("httpx.Response.raise_for_status", raise_for_status):
             with pytest.raises(APITimeoutError):
                 self.client.post(
-                    "/model/anthropic.claude-v2/invoke",
+                    "/model/anthropic.claude-v2:1/invoke",
                     body=dict(
-                        model="anthropic.claude-v2",
+                        model="anthropic.claude-v2:1",
                         max_tokens_to_sample=300,
                         prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
                     ),
@@ -840,9 +840,9 @@ class TestAnthropicBedrock:
         with mock.patch("httpx.Response.raise_for_status", raise_for_status):
             with pytest.raises(APIConnectionError):
                 self.client.post(
-                    "/model/anthropic.claude-v2/invoke",
+                    "/model/anthropic.claude-v2:1/invoke",
                     body=dict(
-                        model="anthropic.claude-v2",
+                        model="anthropic.claude-v2:1",
                         max_tokens_to_sample=300,
                         prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
                     ),
@@ -861,9 +861,9 @@ class TestAnthropicBedrock:
         with mock.patch("httpx.Response.raise_for_status", raise_for_status):
             with pytest.raises(APIStatusError):
                 self.client.post(
-                    "/model/anthropic.claude-v2/invoke",
+                    "/model/anthropic.claude-v2:1/invoke",
                     body=dict(
-                        model="anthropic.claude-v2",
+                        model="anthropic.claude-v2:1",
                         max_tokens_to_sample=300,
                         prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
                     ),
@@ -1660,9 +1660,9 @@ class TestAsyncAnthropicBedrock:
         with mock.patch("httpx.Response.raise_for_status", raise_for_status):
             with pytest.raises(APITimeoutError):
                 await self.client.post(
-                    "/model/anthropic.claude-v2/invoke",
+                    "/model/anthropic.claude-v2:1/invoke",
                     body=dict(
-                        model="anthropic.claude-v2",
+                        model="anthropic.claude-v2:1",
                         max_tokens_to_sample=300,
                         prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
                     ),
@@ -1680,9 +1680,9 @@ class TestAsyncAnthropicBedrock:
         with mock.patch("httpx.Response.raise_for_status", raise_for_status):
             with pytest.raises(APIConnectionError):
                 await self.client.post(
-                    "/model/anthropic.claude-v2/invoke",
+                    "/model/anthropic.claude-v2:1/invoke",
                     body=dict(
-                        model="anthropic.claude-v2",
+                        model="anthropic.claude-v2:1",
                         max_tokens_to_sample=300,
                         prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
                     ),
@@ -1701,9 +1701,9 @@ class TestAsyncAnthropicBedrock:
         with mock.patch("httpx.Response.raise_for_status", raise_for_status):
             with pytest.raises(APIStatusError):
                 await self.client.post(
-                    "/model/anthropic.claude-v2/invoke",
+                    "/model/anthropic.claude-v2:1/invoke",
                     body=dict(
-                        model="anthropic.claude-v2",
+                        model="anthropic.claude-v2:1",
                         max_tokens_to_sample=300,
                         prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
                     ),
