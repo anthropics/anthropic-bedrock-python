@@ -37,7 +37,7 @@ class TestCompletions:
     @parametrize
     def test_method_create_overload_1(self, client: AnthropicBedrock) -> None:
         completion = client.completions.create(
-            model="anthropic.claude-v2",
+            model="anthropic.claude-v2:1",
             max_tokens_to_sample=256,
             prompt="\n\nHuman: Hello, world!\n\nAssistant:",
         )
@@ -46,7 +46,7 @@ class TestCompletions:
     @parametrize
     def test_method_create_with_all_params_overload_1(self, client: AnthropicBedrock) -> None:
         completion = client.completions.create(
-            model="anthropic.claude-v2",
+            model="anthropic.claude-v2:1",
             max_tokens_to_sample=256,
             prompt="\n\nHuman: Hello, world!\n\nAssistant:",
             stop_sequences=["string", "string", "string"],
@@ -60,7 +60,7 @@ class TestCompletions:
     @parametrize
     def test_raw_response_create_overload_1(self, client: AnthropicBedrock) -> None:
         response = client.completions.with_raw_response.create(
-            model="anthropic.claude-v2",
+            model="anthropic.claude-v2:1",
             max_tokens_to_sample=256,
             prompt="\n\nHuman: Hello, world!\n\nAssistant:",
         )
@@ -71,7 +71,7 @@ class TestCompletions:
     @parametrize
     def test_method_create_overload_2(self, client: AnthropicBedrock) -> None:
         client.completions.create(
-            model="anthropic.claude-v2",
+            model="anthropic.claude-v2:1",
             max_tokens_to_sample=256,
             prompt="\n\nHuman: Hello, world!\n\nAssistant:",
             stream=True,
@@ -80,7 +80,7 @@ class TestCompletions:
     @parametrize
     def test_method_create_with_all_params_overload_2(self, client: AnthropicBedrock) -> None:
         client.completions.create(
-            model="anthropic.claude-v2",
+            model="anthropic.claude-v2:1",
             max_tokens_to_sample=256,
             prompt="\n\nHuman: Hello, world!\n\nAssistant:",
             stream=True,
@@ -93,7 +93,7 @@ class TestCompletions:
     @parametrize
     def test_raw_response_create_overload_2(self, client: AnthropicBedrock) -> None:
         response = client.completions.with_raw_response.create(
-            model="anthropic.claude-v2",
+            model="anthropic.claude-v2:1",
             max_tokens_to_sample=256,
             prompt="\n\nHuman: Hello, world!\n\nAssistant:",
             stream=True,
@@ -122,7 +122,7 @@ class TestAsyncCompletions:
     @parametrize
     async def test_method_create_overload_1(self, client: AsyncAnthropicBedrock) -> None:
         completion = await client.completions.create(
-            model="anthropic.claude-v2",
+            model="anthropic.claude-v2:1",
             max_tokens_to_sample=256,
             prompt="\n\nHuman: Hello, world!\n\nAssistant:",
         )
@@ -131,7 +131,7 @@ class TestAsyncCompletions:
     @parametrize
     async def test_method_create_with_all_params_overload_1(self, client: AsyncAnthropicBedrock) -> None:
         completion = await client.completions.create(
-            model="anthropic.claude-v2",
+            model="anthropic.claude-v2:1",
             max_tokens_to_sample=256,
             prompt="\n\nHuman: Hello, world!\n\nAssistant:",
             stop_sequences=["string", "string", "string"],
@@ -145,7 +145,7 @@ class TestAsyncCompletions:
     @parametrize
     async def test_raw_response_create_overload_1(self, client: AsyncAnthropicBedrock) -> None:
         response = await client.completions.with_raw_response.create(
-            model="anthropic.claude-v2",
+            model="anthropic.claude-v2:1",
             max_tokens_to_sample=256,
             prompt="\n\nHuman: Hello, world!\n\nAssistant:",
         )
@@ -156,7 +156,7 @@ class TestAsyncCompletions:
     @parametrize
     async def test_method_create_overload_2(self, client: AsyncAnthropicBedrock) -> None:
         await client.completions.create(
-            model="anthropic.claude-v2",
+            model="anthropic.claude-v2:1",
             max_tokens_to_sample=256,
             prompt="\n\nHuman: Hello, world!\n\nAssistant:",
             stream=True,
@@ -165,7 +165,7 @@ class TestAsyncCompletions:
     @parametrize
     async def test_method_create_with_all_params_overload_2(self, client: AsyncAnthropicBedrock) -> None:
         await client.completions.create(
-            model="anthropic.claude-v2",
+            model="anthropic.claude-v2:1",
             max_tokens_to_sample=256,
             prompt="\n\nHuman: Hello, world!\n\nAssistant:",
             stream=True,
@@ -178,7 +178,7 @@ class TestAsyncCompletions:
     @parametrize
     async def test_raw_response_create_overload_2(self, client: AsyncAnthropicBedrock) -> None:
         response = await client.completions.with_raw_response.create(
-            model="anthropic.claude-v2",
+            model="anthropic.claude-v2:1",
             max_tokens_to_sample=256,
             prompt="\n\nHuman: Hello, world!\n\nAssistant:",
             stream=True,

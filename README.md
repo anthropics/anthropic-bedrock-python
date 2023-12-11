@@ -40,7 +40,7 @@ client = AnthropicBedrock(
 )
 
 completion = client.completions.create(
-    model="anthropic.claude-v2",
+    model="anthropic.claude-v2:1",
     max_tokens_to_sample=256,
     prompt=f"{anthropic_bedrock.HUMAN_PROMPT} how does a court case get to the Supreme Court? {anthropic_bedrock.AI_PROMPT}",
 )
@@ -62,7 +62,7 @@ client = AsyncAnthropicBedrock()
 
 async def main():
     completion = await client.completions.create(
-        model="anthropic.claude-v2",
+        model="anthropic.claude-v2:1",
         max_tokens_to_sample=256,
         prompt=f"{anthropic_bedrock.HUMAN_PROMPT} how does a court case get to the Supreme Court? {anthropic_bedrock.AI_PROMPT}",
     )
@@ -86,7 +86,7 @@ client = AnthropicBedrock()
 stream = client.completions.create(
     prompt=f"{HUMAN_PROMPT} Your prompt here{AI_PROMPT}",
     max_tokens_to_sample=300,
-    model="anthropic.claude-v2",
+    model="anthropic.claude-v2:1",
     stream=True,
 )
 for completion in stream:
@@ -103,7 +103,7 @@ client = AsyncAnthropicBedrock()
 stream = await client.completions.create(
     prompt=f"{HUMAN_PROMPT} Your prompt here{AI_PROMPT}",
     max_tokens_to_sample=300,
-    model="anthropic.claude-v2",
+    model="anthropic.claude-v2:1",
     stream=True,
 )
 async for completion in stream:
@@ -147,7 +147,7 @@ try:
     client.completions.create(
         prompt=f"{anthropic_bedrock.HUMAN_PROMPT} Your prompt here {anthropic_bedrock.AI_PROMPT}",
         max_tokens_to_sample=256,
-        model="anthropic.claude-v2",
+        model="anthropic.claude-v2:1",
     )
 except anthropic_bedrock.APIConnectionError as e:
     print("The server could not be reached")
@@ -194,7 +194,7 @@ client = AnthropicBedrock(
 client.with_options(max_retries=5).completions.create(
     prompt=f"{HUMAN_PROMPT} Can you help me effectively ask for a raise at work?{AI_PROMPT}",
     max_tokens_to_sample=300,
-    model="anthropic.claude-v2",
+    model="anthropic.claude-v2:1",
 )
 ```
 
@@ -221,7 +221,7 @@ client = AnthropicBedrock(
 client.with_options(timeout=5 * 1000).completions.create(
     prompt=f"{HUMAN_PROMPT} Where can I get a good coffee in my neighbourhood?{AI_PROMPT}",
     max_tokens_to_sample=300,
-    model="anthropic.claude-v2",
+    model="anthropic.claude-v2:1",
 )
 ```
 
@@ -265,7 +265,7 @@ client = AnthropicBedrock()
 response = client.completions.with_raw_response.create(
     prompt=f"{HUMAN_PROMPT} Your prompt here{AI_PROMPT}",
     max_tokens_to_sample=300,
-    model="anthropic.claude-v2",
+    model="anthropic.claude-v2:1",
 )
 print(response.headers.get('X-My-Header'))
 
