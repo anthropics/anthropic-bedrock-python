@@ -32,7 +32,12 @@ class Completions(SyncAPIResource):
     def create(
         self,
         *,
-        model: Union[str, Literal["anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"]],
+        model: Union[
+            str,
+            Literal[
+                "anthropic.claude-v2:1", "anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"
+            ],
+        ],
         max_tokens_to_sample: int,
         prompt: str,
         stop_sequences: List[str] | NotGiven = NOT_GIVEN,
@@ -108,7 +113,12 @@ class Completions(SyncAPIResource):
     def create(
         self,
         *,
-        model: Union[str, Literal["anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"]],
+        model: Union[
+            str,
+            Literal[
+                "anthropic.claude-v2:1", "anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"
+            ],
+        ],
         max_tokens_to_sample: int,
         prompt: str,
         stream: Literal[True],
@@ -184,7 +194,12 @@ class Completions(SyncAPIResource):
     def create(
         self,
         *,
-        model: Union[str, Literal["anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"]],
+        model: Union[
+            str,
+            Literal[
+                "anthropic.claude-v2:1", "anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"
+            ],
+        ],
         max_tokens_to_sample: int,
         prompt: str,
         stream: bool,
@@ -260,7 +275,12 @@ class Completions(SyncAPIResource):
     def create(
         self,
         *,
-        model: Union[str, Literal["anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"]],
+        model: Union[
+            str,
+            Literal[
+                "anthropic.claude-v2:1", "anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"
+            ],
+        ],
         max_tokens_to_sample: int,
         prompt: str,
         stop_sequences: List[str] | NotGiven = NOT_GIVEN,
@@ -309,7 +329,12 @@ class AsyncCompletions(AsyncAPIResource):
     async def create(
         self,
         *,
-        model: Union[str, Literal["anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"]],
+        model: Union[
+            str,
+            Literal[
+                "anthropic.claude-v2:1", "anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"
+            ],
+        ],
         max_tokens_to_sample: int,
         prompt: str,
         stop_sequences: List[str] | NotGiven = NOT_GIVEN,
@@ -385,7 +410,12 @@ class AsyncCompletions(AsyncAPIResource):
     async def create(
         self,
         *,
-        model: Union[str, Literal["anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"]],
+        model: Union[
+            str,
+            Literal[
+                "anthropic.claude-v2:1", "anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"
+            ],
+        ],
         max_tokens_to_sample: int,
         prompt: str,
         stream: Literal[True],
@@ -461,7 +491,12 @@ class AsyncCompletions(AsyncAPIResource):
     async def create(
         self,
         *,
-        model: Union[str, Literal["anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"]],
+        model: Union[
+            str,
+            Literal[
+                "anthropic.claude-v2:1", "anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"
+            ],
+        ],
         max_tokens_to_sample: int,
         prompt: str,
         stream: bool,
@@ -537,7 +572,12 @@ class AsyncCompletions(AsyncAPIResource):
     async def create(
         self,
         *,
-        model: Union[str, Literal["anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"]],
+        model: Union[
+            str,
+            Literal[
+                "anthropic.claude-v2:1", "anthropic.claude-v2", "anthropic.claude-v1", "anthropic.claude-instant-v1"
+            ],
+        ],
         max_tokens_to_sample: int,
         prompt: str,
         stop_sequences: List[str] | NotGiven = NOT_GIVEN,
