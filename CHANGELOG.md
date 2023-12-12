@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.5.8 (2023-12-12)
+
+Full Changelog: [v0.5.7...v0.5.8](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.7...v0.5.8)
+
+### Bug Fixes
+
+* avoid leaking memory when Client.with_options is used ([#97](https://github.com/anthropics/anthropic-bedrock-python/issues/97)) ([5d33836](https://github.com/anthropics/anthropic-bedrock-python/commit/5d338361ce8076ffa6fe6e3a4acf1d56eaf63496))
+* **errors:** properly assign APIError.body ([#96](https://github.com/anthropics/anthropic-bedrock-python/issues/96)) ([e81848f](https://github.com/anthropics/anthropic-bedrock-python/commit/e81848f4d6b2155947a865d2b49cd9049de24591))
+
+
+### Chores
+
+* **internal:** enable more lint rules ([#94](https://github.com/anthropics/anthropic-bedrock-python/issues/94)) ([89ecfb9](https://github.com/anthropics/anthropic-bedrock-python/commit/89ecfb99fe562af7a77df5b529ac30355ee4b18f))
+* **internal:** reformat imports ([#91](https://github.com/anthropics/anthropic-bedrock-python/issues/91)) ([dbe9399](https://github.com/anthropics/anthropic-bedrock-python/commit/dbe9399fc7e383e2c99bd786697a5fdb58e9bb81))
+* **internal:** reformat imports ([#93](https://github.com/anthropics/anthropic-bedrock-python/issues/93)) ([df2fd4c](https://github.com/anthropics/anthropic-bedrock-python/commit/df2fd4c3131bcff7ddd6a67b89932d47ac0c7628))
+* **internal:** update formatting ([#92](https://github.com/anthropics/anthropic-bedrock-python/issues/92)) ([df7365f](https://github.com/anthropics/anthropic-bedrock-python/commit/df7365f35a2c2978229eecc2b61a833a1dd82e52))
+* **internal:** update test examples ([#98](https://github.com/anthropics/anthropic-bedrock-python/issues/98)) ([efffacd](https://github.com/anthropics/anthropic-bedrock-python/commit/efffacd9ee0083242fcaeb97b589f1ab9b15aa5e))
+
+
+### Refactors
+
+* **client:** simplify cleanup ([#99](https://github.com/anthropics/anthropic-bedrock-python/issues/99)) ([9ba7039](https://github.com/anthropics/anthropic-bedrock-python/commit/9ba70398e00400bf4a9630c47845366e32916ad8))
+* simplify internal error handling ([#100](https://github.com/anthropics/anthropic-bedrock-python/issues/100)) ([1ecff82](https://github.com/anthropics/anthropic-bedrock-python/commit/1ecff82840229eefe36542dee05c5d9e5947f82b))
+
 ## 0.5.7 (2023-12-06)
 
 Full Changelog: [v0.5.6...v0.5.7](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.6...v0.5.7)

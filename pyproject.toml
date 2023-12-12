@@ -1,6 +1,6 @@
 [project]
 name = "anthropic-bedrock"
-version = "0.5.7"
+version = "0.5.8"
 description = "The official Python library for the anthropic-bedrock API"
 readme = "README.md"
 license = "MIT"
