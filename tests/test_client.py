@@ -16,19 +16,11 @@ import pytest
 from respx import MockRouter
 from pydantic import ValidationError
 
-from anthropic_bedrock import (
-    AnthropicBedrock,
-    AsyncAnthropicBedrock,
-    APIResponseValidationError,
-)
+from anthropic_bedrock import AnthropicBedrock, AsyncAnthropicBedrock, APIResponseValidationError
 from anthropic_bedrock._client import AnthropicBedrock, AsyncAnthropicBedrock
 from anthropic_bedrock._models import BaseModel, FinalRequestOptions
 from anthropic_bedrock._streaming import Stream, AsyncStream
-from anthropic_bedrock._exceptions import (
-    APIStatusError,
-    APITimeoutError,
-    APIResponseValidationError,
-)
+from anthropic_bedrock._exceptions import APIStatusError, APITimeoutError, APIResponseValidationError
 from anthropic_bedrock._base_client import (
     DEFAULT_TIMEOUT,
     HTTPX_DEFAULT_TIMEOUT,
