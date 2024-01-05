@@ -19,15 +19,9 @@ from typing import (
     Sequence,
     AsyncIterator,
 )
-from typing_extensions import (
-    Literal,
-    Protocol,
-    TypeAlias,
-    TypedDict,
-    override,
-    runtime_checkable,
-)
+from typing_extensions import Literal, Protocol, TypeAlias, TypedDict, override, runtime_checkable
 
+import httpx
 import pydantic
 from httpx import URL, Proxy, Timeout, Response, BaseTransport, AsyncBaseTransport
 
@@ -264,11 +258,6 @@ class RequestOptions(TypedDict, total=False):
     idempotency_key: str
 
 
-# Sentinel class used when the response type is an object with an unknown schema
-class UnknownResponse:
-    ...
-
-
 # Sentinel class used until PEP 0661 is accepted
 class NotGiven:
     """
@@ -278,11 +267,13 @@ class NotGiven:
     For example:
 
     ```py
-    def get(timeout: Union[int, NotGiven, None] = NotGiven()) -> Response: ...
+    def get(timeout: Union[int, NotGiven, None] = NotGiven()) -> Response:
+        ...
 
-    get(timeout=1) # 1s timeout
-    get(timeout=None) # No timeout
-    get() # Default timeout behavior, which may not be statically known at the method definition.
+
+    get(timeout=1)  # 1s timeout
+    get(timeout=None)  # No timeout
+    get()  # Default timeout behavior, which may not be statically known at the method definition.
     ```
     """
 
@@ -304,14 +295,14 @@ class Omit:
 
     ```py
     # as the default `Content-Type` header is `application/json` that will be sent
-    client.post('/upload/files', files={'file': b'my raw file content'})
+    client.post("/upload/files", files={"file": b"my raw file content"})
 
     # you can't explicitly override the header as it has to be dynamically generated
     # to look something like: 'multipart/form-data; boundary=0d8382fcf5f8c3be01ca2e11002d2983'
-    client.post(..., headers={'Content-Type': 'multipart/form-data'})
+    client.post(..., headers={"Content-Type": "multipart/form-data"})
 
     # instead you can remove the default `application/json` header by passing Omit
-    client.post(..., headers={'Content-Type': Omit()})
+    client.post(..., headers={"Content-Type": Omit()})
     ```
     """
 
@@ -343,7 +334,17 @@ HeadersLike = Union[Headers, HeadersLikeProtocol]
 
 ResponseT = TypeVar(
     "ResponseT",
-    bound="Union[str, None, BaseModel, List[Any], Dict[str, Any], Response, UnknownResponse, ModelBuilderProtocol, BinaryResponseContent]",
+    bound=Union[
+        object,
+        str,
+        None,
+        "BaseModel",
+        List[Any],
+        Dict[str, Any],
+        Response,
+        ModelBuilderProtocol,
+        BinaryResponseContent,
+    ],
 )
 
 StrBytesIntFloat = Union[str, bytes, int, float]
@@ -353,3 +354,21 @@ StrBytesIntFloat = Union[str, bytes, int, float]
 IncEx: TypeAlias = "set[int] | set[str] | dict[int, Any] | dict[str, Any] | None"
 
 PostParser = Callable[[Any], Any]
+
+
+@runtime_checkable
+class InheritsGeneric(Protocol):
+    """Represents a type that has inherited from `Generic`
+    The `__orig_bases__` property can be used to determine the resolved
+    type variable for a given base class.
+    """
+
+    __orig_bases__: tuple[_GenericAlias]
+
+
+class _GenericAlias(Protocol):
+    __origin__: type[object]
+
+
+class HttpxSendArgs(TypedDict, total=False):
+    auth: httpx.Auth
