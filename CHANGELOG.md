@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.5.9 (2024-01-08)
+
+Full Changelog: [v0.5.8...v0.5.9](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.8...v0.5.9)
+
+### Bug Fixes
+
+* **client:** correctly use custom http client auth ([#110](https://github.com/anthropics/anthropic-bedrock-python/issues/110)) ([10ae9d4](https://github.com/anthropics/anthropic-bedrock-python/commit/10ae9d4ed6ead49a7f290611f4a14da43cef7c89))
+
+
+### Chores
+
+* add .keep files for examples and custom code directories ([#114](https://github.com/anthropics/anthropic-bedrock-python/issues/114)) ([de6bd21](https://github.com/anthropics/anthropic-bedrock-python/commit/de6bd219119dec4c324c20a3009b9fdd94af44d1))
+* **ci:** run release workflow once per day ([#101](https://github.com/anthropics/anthropic-bedrock-python/issues/101)) ([02e331a](https://github.com/anthropics/anthropic-bedrock-python/commit/02e331ad34bcaaa4ac75000eb25c3e93127ff6d7))
+* **internal:** add bin script ([#107](https://github.com/anthropics/anthropic-bedrock-python/issues/107)) ([159d3d1](https://github.com/anthropics/anthropic-bedrock-python/commit/159d3d142cd0edbb63a3dc3a71f46206af699037))
+* **internal:** fix typos ([#105](https://github.com/anthropics/anthropic-bedrock-python/issues/105)) ([4364c8e](https://github.com/anthropics/anthropic-bedrock-python/commit/4364c8e0d810698a222396f3c16c2896a99e6ab1))
+* **internal:** loosen type var restrictions ([#113](https://github.com/anthropics/anthropic-bedrock-python/issues/113)) ([c7bc3af](https://github.com/anthropics/anthropic-bedrock-python/commit/c7bc3afaa911436ae424a2ccb9bc4a55f7ea20e3))
+* **internal:** minor utils restructuring ([#104](https://github.com/anthropics/anthropic-bedrock-python/issues/104)) ([00c3491](https://github.com/anthropics/anthropic-bedrock-python/commit/00c34910663c216ed50d3fd7663ae7fd48239a3e))
+* **internal:** replace isort with ruff ([#111](https://github.com/anthropics/anthropic-bedrock-python/issues/111)) ([0193bb6](https://github.com/anthropics/anthropic-bedrock-python/commit/0193bb67d130bffc30f4cd78cd52c08cca50d907))
+* **internal:** use ruff instead of black for formatting ([#109](https://github.com/anthropics/anthropic-bedrock-python/issues/109)) ([4bc28b0](https://github.com/anthropics/anthropic-bedrock-python/commit/4bc28b0a739dcb84c4450e3414b7c61cef9405bf))
+* **package:** bump minimum typing-extensions to 4.7 ([#106](https://github.com/anthropics/anthropic-bedrock-python/issues/106)) ([50227fd](https://github.com/anthropics/anthropic-bedrock-python/commit/50227fd4931ae7356ef77cbf75b109d7769f4e1d))
+* **streaming:** update constructor to use direct client names ([#103](https://github.com/anthropics/anthropic-bedrock-python/issues/103)) ([2d162ef](https://github.com/anthropics/anthropic-bedrock-python/commit/2d162efdb5fcf40603e2e4705a13acc53efa9267))
+* use property declarations for resource members ([#112](https://github.com/anthropics/anthropic-bedrock-python/issues/112)) ([0704047](https://github.com/anthropics/anthropic-bedrock-python/commit/070404797293fef52350ff1025cf7dd20e11cc13))
+
 ## 0.5.8 (2023-12-12)
 
 Full Changelog: [v0.5.7...v0.5.8](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.7...v0.5.8)
