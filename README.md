@@ -10,7 +10,7 @@ For the non-Bedrock Anthropic API at api.anthropic.com, see [`anthropic-python`]
 
 ## Documentation
 
-The API documentation can be found [here](https://docs.anthropic.com/claude/reference/).
+The REST API documentation can be found [on docs.anthropic.com](https://docs.anthropic.com/claude/reference/). The full API of this library can be found in [api.md](https://www.github.com/anthropics/anthropic-bedrock-python/blob/main/api.md).
 
 ## Installation
 
