@@ -19,6 +19,8 @@ from pydantic import ValidationError
 from anthropic_bedrock import AnthropicBedrock, AsyncAnthropicBedrock, APIResponseValidationError
 from anthropic_bedrock._client import AnthropicBedrock, AsyncAnthropicBedrock
 from anthropic_bedrock._models import BaseModel, FinalRequestOptions
+from anthropic_bedrock._response import APIResponse, AsyncAPIResponse
+from anthropic_bedrock._constants import RAW_RESPONSE_HEADER
 from anthropic_bedrock._streaming import Stream, AsyncStream
 from anthropic_bedrock._exceptions import APIStatusError, APITimeoutError, APIResponseValidationError
 from anthropic_bedrock._base_client import (
@@ -251,6 +253,7 @@ class TestAnthropicBedrock:
                         # to_raw_response_wrapper leaks through the @functools.wraps() decorator.
                         #
                         # removing the decorator fixes the leak for reasons we don't understand.
+                        "anthropic_bedrock/_legacy_response.py",
                         "anthropic_bedrock/_response.py",
                         # pydantic.BaseModel.model_dump || pydantic.BaseModel.dict leak memory for some reason.
                         "anthropic_bedrock/_compat.py",
@@ -715,8 +718,9 @@ class TestAnthropicBedrock:
 
         respx_mock.post("/foo").mock(return_value=httpx.Response(200, json={"foo": "bar"}))
 
-        response = self.client.post("/foo", cast_to=Model, stream=True)
-        assert isinstance(response, Stream)
+        stream = self.client.post("/foo", cast_to=Model, stream=True, stream_cls=Stream[Model])
+        assert isinstance(stream, Stream)
+        stream.response.close()
 
     @pytest.mark.respx(base_url=base_url)
     def test_received_text_for_expected_json(self, respx_mock: MockRouter) -> None:
@@ -784,6 +788,29 @@ class TestAnthropicBedrock:
 
     @mock.patch("anthropic_bedrock._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
+    def test_streaming_response(self) -> None:
+        response = self.client.post(
+            "/model/anthropic.claude-v2:1/invoke",
+            body=dict(
+                max_tokens_to_sample=300,
+                prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
+                anthropic_version="bedrock-2023-05-31",
+            ),
+            cast_to=APIResponse[bytes],
+            options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
+        )
+
+        assert not cast(Any, response.is_closed)
+        assert _get_open_connections(self.client) == 1
+
+        for _ in response.iter_bytes():
+            ...
+
+        assert cast(Any, response.is_closed)
+        assert _get_open_connections(self.client) == 0
+
+    @mock.patch("anthropic_bedrock._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @pytest.mark.respx(base_url=base_url)
     def test_retrying_timeout_errors_doesnt_leak(self, respx_mock: MockRouter) -> None:
         respx_mock.post("/model/anthropic.claude-v2:1/invoke").mock(
             side_effect=httpx.TimeoutException("Test timeout error")
@@ -793,12 +820,12 @@ class TestAnthropicBedrock:
             self.client.post(
                 "/model/anthropic.claude-v2:1/invoke",
                 body=dict(
-                    model="anthropic.claude-v2:1",
                     max_tokens_to_sample=300,
                     prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
+                    anthropic_version="bedrock-2023-05-31",
                 ),
                 cast_to=httpx.Response,
-                options={"headers": {"X-Stainless-Streamed-Raw-Response": "true"}},
+                options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
             )
 
         assert _get_open_connections(self.client) == 0
@@ -812,12 +839,12 @@ class TestAnthropicBedrock:
             self.client.post(
                 "/model/anthropic.claude-v2:1/invoke",
                 body=dict(
-                    model="anthropic.claude-v2:1",
                     max_tokens_to_sample=300,
                     prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
+                    anthropic_version="bedrock-2023-05-31",
                 ),
                 cast_to=httpx.Response,
-                options={"headers": {"X-Stainless-Streamed-Raw-Response": "true"}},
+                options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
             )
 
         assert _get_open_connections(self.client) == 0
@@ -1022,6 +1049,7 @@ class TestAsyncAnthropicBedrock:
                         # to_raw_response_wrapper leaks through the @functools.wraps() decorator.
                         #
                         # removing the decorator fixes the leak for reasons we don't understand.
+                        "anthropic_bedrock/_legacy_response.py",
                         "anthropic_bedrock/_response.py",
                         # pydantic.BaseModel.model_dump || pydantic.BaseModel.dict leak memory for some reason.
                         "anthropic_bedrock/_compat.py",
@@ -1489,8 +1517,9 @@ class TestAsyncAnthropicBedrock:
 
         respx_mock.post("/foo").mock(return_value=httpx.Response(200, json={"foo": "bar"}))
 
-        response = await self.client.post("/foo", cast_to=Model, stream=True)
-        assert isinstance(response, AsyncStream)
+        stream = await self.client.post("/foo", cast_to=Model, stream=True, stream_cls=AsyncStream[Model])
+        assert isinstance(stream, AsyncStream)
+        await stream.response.aclose()
 
     @pytest.mark.respx(base_url=base_url)
     @pytest.mark.asyncio
@@ -1560,6 +1589,29 @@ class TestAsyncAnthropicBedrock:
 
     @mock.patch("anthropic_bedrock._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
+    async def test_streaming_response(self) -> None:
+        response = await self.client.post(
+            "/model/anthropic.claude-v2:1/invoke",
+            body=dict(
+                max_tokens_to_sample=300,
+                prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
+                anthropic_version="bedrock-2023-05-31",
+            ),
+            cast_to=AsyncAPIResponse[bytes],
+            options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
+        )
+
+        assert not cast(Any, response.is_closed)
+        assert _get_open_connections(self.client) == 1
+
+        async for _ in response.iter_bytes():
+            ...
+
+        assert cast(Any, response.is_closed)
+        assert _get_open_connections(self.client) == 0
+
+    @mock.patch("anthropic_bedrock._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @pytest.mark.respx(base_url=base_url)
     async def test_retrying_timeout_errors_doesnt_leak(self, respx_mock: MockRouter) -> None:
         respx_mock.post("/model/anthropic.claude-v2:1/invoke").mock(
             side_effect=httpx.TimeoutException("Test timeout error")
@@ -1569,12 +1621,12 @@ class TestAsyncAnthropicBedrock:
             await self.client.post(
                 "/model/anthropic.claude-v2:1/invoke",
                 body=dict(
-                    model="anthropic.claude-v2:1",
                     max_tokens_to_sample=300,
                     prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
+                    anthropic_version="bedrock-2023-05-31",
                 ),
                 cast_to=httpx.Response,
-                options={"headers": {"X-Stainless-Streamed-Raw-Response": "true"}},
+                options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
             )
 
         assert _get_open_connections(self.client) == 0
@@ -1588,12 +1640,12 @@ class TestAsyncAnthropicBedrock:
             await self.client.post(
                 "/model/anthropic.claude-v2:1/invoke",
                 body=dict(
-                    model="anthropic.claude-v2:1",
                     max_tokens_to_sample=300,
                     prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
+                    anthropic_version="bedrock-2023-05-31",
                 ),
                 cast_to=httpx.Response,
-                options={"headers": {"X-Stainless-Streamed-Raw-Response": "true"}},
+                options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
             )
 
         assert _get_open_connections(self.client) == 0
