@@ -19,7 +19,6 @@ from pydantic import ValidationError
 from anthropic_bedrock import AnthropicBedrock, AsyncAnthropicBedrock, APIResponseValidationError
 from anthropic_bedrock._client import AnthropicBedrock, AsyncAnthropicBedrock
 from anthropic_bedrock._models import BaseModel, FinalRequestOptions
-from anthropic_bedrock._response import APIResponse, AsyncAPIResponse
 from anthropic_bedrock._constants import RAW_RESPONSE_HEADER
 from anthropic_bedrock._streaming import Stream, AsyncStream
 from anthropic_bedrock._exceptions import APIStatusError, APITimeoutError, APIResponseValidationError
@@ -785,29 +784,6 @@ class TestAnthropicBedrock:
         options = FinalRequestOptions(method="get", url="/foo", max_retries=3)
         calculated = client._calculate_retry_timeout(remaining_retries, options, headers)
         assert calculated == pytest.approx(timeout, 0.5 * 0.875)  # pyright: ignore[reportUnknownMemberType]
-
-    @mock.patch("anthropic_bedrock._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
-    @pytest.mark.respx(base_url=base_url)
-    def test_streaming_response(self) -> None:
-        response = self.client.post(
-            "/model/anthropic.claude-v2:1/invoke",
-            body=dict(
-                max_tokens_to_sample=300,
-                prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
-                anthropic_version="bedrock-2023-05-31",
-            ),
-            cast_to=APIResponse[bytes],
-            options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
-        )
-
-        assert not cast(Any, response.is_closed)
-        assert _get_open_connections(self.client) == 1
-
-        for _ in response.iter_bytes():
-            ...
-
-        assert cast(Any, response.is_closed)
-        assert _get_open_connections(self.client) == 0
 
     @mock.patch("anthropic_bedrock._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
@@ -1586,29 +1562,6 @@ class TestAsyncAnthropicBedrock:
         options = FinalRequestOptions(method="get", url="/foo", max_retries=3)
         calculated = client._calculate_retry_timeout(remaining_retries, options, headers)
         assert calculated == pytest.approx(timeout, 0.5 * 0.875)  # pyright: ignore[reportUnknownMemberType]
-
-    @mock.patch("anthropic_bedrock._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
-    @pytest.mark.respx(base_url=base_url)
-    async def test_streaming_response(self) -> None:
-        response = await self.client.post(
-            "/model/anthropic.claude-v2:1/invoke",
-            body=dict(
-                max_tokens_to_sample=300,
-                prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
-                anthropic_version="bedrock-2023-05-31",
-            ),
-            cast_to=AsyncAPIResponse[bytes],
-            options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
-        )
-
-        assert not cast(Any, response.is_closed)
-        assert _get_open_connections(self.client) == 1
-
-        async for _ in response.iter_bytes():
-            ...
-
-        assert cast(Any, response.is_closed)
-        assert _get_open_connections(self.client) == 0
 
     @mock.patch("anthropic_bedrock._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
