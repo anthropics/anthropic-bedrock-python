@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.6.0 (2024-01-18)
+
+Full Changelog: [v0.5.9...v0.6.0](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.9...v0.6.0)
+
+### Features
+
+* **client:** add support for streaming raw responses ([#118](https://github.com/anthropics/anthropic-bedrock-python/issues/118)) ([41a1aa3](https://github.com/anthropics/anthropic-bedrock-python/commit/41a1aa3dc46a6e49dffe312dc33c582046569bc2))
+
+
+### Bug Fixes
+
+* **ci:** ignore stainless-app edits to release PR title ([#127](https://github.com/anthropics/anthropic-bedrock-python/issues/127)) ([662b250](https://github.com/anthropics/anthropic-bedrock-python/commit/662b250ccd9d5ae93cd7ac0998fd592c0ae8f6e6))
+
+
+### Chores
+
+* add write_to_file binary helper method ([#120](https://github.com/anthropics/anthropic-bedrock-python/issues/120)) ([7ac6d5b](https://github.com/anthropics/anthropic-bedrock-python/commit/7ac6d5b34d3e690d10c674af9bebfdd3d1736809))
+* **client:** improve debug logging for failed requests ([#115](https://github.com/anthropics/anthropic-bedrock-python/issues/115)) ([9a53654](https://github.com/anthropics/anthropic-bedrock-python/commit/9a53654135c2008dc66228b578fc5ed0deb83a99))
+* **internal:** fix typing util function ([#121](https://github.com/anthropics/anthropic-bedrock-python/issues/121)) ([78c1927](https://github.com/anthropics/anthropic-bedrock-python/commit/78c19276b618a3f0198588f5f7ca9a46b2ba88f1))
+* **internal:** remove redundant client test ([#122](https://github.com/anthropics/anthropic-bedrock-python/issues/122)) ([6403fe4](https://github.com/anthropics/anthropic-bedrock-python/commit/6403fe4ef48a50a205555329399a3bb1a790180b))
+* **internal:** share client instances between all tests ([#125](https://github.com/anthropics/anthropic-bedrock-python/issues/125)) ([d9aa8a1](https://github.com/anthropics/anthropic-bedrock-python/commit/d9aa8a1f2377ddfba98c5c11abbd6c82c0e72d3e))
+* **internal:** speculative retry-after-ms support ([#123](https://github.com/anthropics/anthropic-bedrock-python/issues/123)) ([e82e62e](https://github.com/anthropics/anthropic-bedrock-python/commit/e82e62eb60597d7ae87d9b154661a21eb552c019))
+* **internal:** updates to proxy helper ([#119](https://github.com/anthropics/anthropic-bedrock-python/issues/119)) ([0383e44](https://github.com/anthropics/anthropic-bedrock-python/commit/0383e44e58ed8a41eb1e4ec434e0e58c48f34c39))
+* lazy load raw resource class properties ([#124](https://github.com/anthropics/anthropic-bedrock-python/issues/124)) ([dea3b90](https://github.com/anthropics/anthropic-bedrock-python/commit/dea3b90b0ee300bfb6cd07574e80e1eb180a2ca3))
+
+
+### Documentation
+
+* **readme:** improve api reference ([#117](https://github.com/anthropics/anthropic-bedrock-python/issues/117)) ([f255984](https://github.com/anthropics/anthropic-bedrock-python/commit/f255984201733db377723fba1e22ce3e3e0eec88))
+
 ## 0.5.9 (2024-01-08)
 
 Full Changelog: [v0.5.8...v0.5.9](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.8...v0.5.9)
