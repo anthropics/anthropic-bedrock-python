@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.7.0 (2024-01-25)
+
+Full Changelog: [v0.6.0...v0.7.0](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.6.0...v0.7.0)
+
+### Features
+
+* **client:** enable follow redirects by default ([#131](https://github.com/anthropics/anthropic-bedrock-python/issues/131)) ([aa95ff7](https://github.com/anthropics/anthropic-bedrock-python/commit/aa95ff73344d33025e9a4c090228813f645cd1bf))
+
+
+### Chores
+
+* **internal:** add internal helpers ([#128](https://github.com/anthropics/anthropic-bedrock-python/issues/128)) ([dedf694](https://github.com/anthropics/anthropic-bedrock-python/commit/dedf694e6c7de5e03e017d1ce7911c15c04a0f04))
+
 ## 0.6.0 (2024-01-18)
 
 Full Changelog: [v0.5.9...v0.6.0](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.5.9...v0.6.0)
