@@ -824,10 +824,13 @@ class TestAnthropicBedrock:
         with pytest.raises(APITimeoutError):
             self.client.post(
                 "/model/anthropic.claude-v2:1/invoke",
-                body=dict(
-                    max_tokens_to_sample=300,
-                    prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
-                    anthropic_version="bedrock-2023-05-31",
+                body=cast(
+                    object,
+                    dict(
+                        max_tokens_to_sample=300,
+                        prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
+                        anthropic_version="bedrock-2023-05-31",
+                    ),
                 ),
                 cast_to=httpx.Response,
                 options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
@@ -843,10 +846,13 @@ class TestAnthropicBedrock:
         with pytest.raises(APIStatusError):
             self.client.post(
                 "/model/anthropic.claude-v2:1/invoke",
-                body=dict(
-                    max_tokens_to_sample=300,
-                    prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
-                    anthropic_version="bedrock-2023-05-31",
+                body=cast(
+                    object,
+                    dict(
+                        max_tokens_to_sample=300,
+                        prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
+                        anthropic_version="bedrock-2023-05-31",
+                    ),
                 ),
                 cast_to=httpx.Response,
                 options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
@@ -1631,10 +1637,13 @@ class TestAsyncAnthropicBedrock:
         with pytest.raises(APITimeoutError):
             await self.client.post(
                 "/model/anthropic.claude-v2:1/invoke",
-                body=dict(
-                    max_tokens_to_sample=300,
-                    prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
-                    anthropic_version="bedrock-2023-05-31",
+                body=cast(
+                    object,
+                    dict(
+                        max_tokens_to_sample=300,
+                        prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
+                        anthropic_version="bedrock-2023-05-31",
+                    ),
                 ),
                 cast_to=httpx.Response,
                 options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
@@ -1650,10 +1659,13 @@ class TestAsyncAnthropicBedrock:
         with pytest.raises(APIStatusError):
             await self.client.post(
                 "/model/anthropic.claude-v2:1/invoke",
-                body=dict(
-                    max_tokens_to_sample=300,
-                    prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
-                    anthropic_version="bedrock-2023-05-31",
+                body=cast(
+                    object,
+                    dict(
+                        max_tokens_to_sample=300,
+                        prompt="\n\nHuman:Where can I get a good coffee in my neighbourhood?\n\nAssistant:",
+                        anthropic_version="bedrock-2023-05-31",
+                    ),
                 ),
                 cast_to=httpx.Response,
                 options={"headers": {RAW_RESPONSE_HEADER: "stream"}},
