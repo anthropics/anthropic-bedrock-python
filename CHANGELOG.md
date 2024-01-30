@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.8.0 (2024-01-30)
+
+Full Changelog: [v0.7.0...v0.8.0](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.7.0...v0.8.0)
+
+### Features
+
+* **client:** support parsing custom response types ([#135](https://github.com/anthropics/anthropic-bedrock-python/issues/135)) ([cf93842](https://github.com/anthropics/anthropic-bedrock-python/commit/cf93842e0c195ab074d669d431f516f9878ebd02))
+
+
+### Chores
+
+* **internal:** cast type in mocked test ([#136](https://github.com/anthropics/anthropic-bedrock-python/issues/136)) ([93f200f](https://github.com/anthropics/anthropic-bedrock-python/commit/93f200f06b532441a79e7f284ecb9c27ac3d999c))
+* **internal:** enable ruff type checking misuse lint rule ([#134](https://github.com/anthropics/anthropic-bedrock-python/issues/134)) ([5a9058e](https://github.com/anthropics/anthropic-bedrock-python/commit/5a9058ed00a4e19fd875dd4ed82ef053c3f56998))
+* **internal:** support multipart data with overlapping keys ([#132](https://github.com/anthropics/anthropic-bedrock-python/issues/132)) ([22ebd84](https://github.com/anthropics/anthropic-bedrock-python/commit/22ebd844ce86848c639fd221a6a67ce07453241b))
+* **internal:** support pre-release versioning ([#137](https://github.com/anthropics/anthropic-bedrock-python/issues/137)) ([e914eea](https://github.com/anthropics/anthropic-bedrock-python/commit/e914eea965a2b7e20abdc205aa8fd7ef302f5479))
+
 ## 0.7.0 (2024-01-25)
 
 Full Changelog: [v0.6.0...v0.7.0](https://github.com/anthropics/anthropic-bedrock-python/compare/v0.6.0...v0.7.0)
